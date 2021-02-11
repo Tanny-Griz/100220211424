@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title>Document</title>
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <div class="card">
+                <div class="holder-user">
+                    <div class="holder-avatar">
+                        <img src="images/img.png" alt="img">
+                    </div>
+                    <div class="holder-text">
+                        <h4>Вероника Ростова</h4>
+                        <p>Менеджер по продажам</p>
+                        <div class="text-box">
+                            <span>Подберу для вас самые лучшие предложения. <br>
+                        Мои услуги абсолютно бесплатны</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="holder-services">
+                    <div class="services">
+                        <p>Услуг</p>
+                        <div class="line"></div>
+                        <div class="holder-total">
+                            <div>Ручное бронирование</div>
+                            <div>{{manualBooking}}</div>
+                        </div>
+                        <div class="holder-total">
+                            <div>Пакетные туры</div>
+                            <div>{{packageTours}}</div>
+                        </div>
+                        <div class="holder-total">
+                            <div>Отели</div>
+                            <div>{{hotels}}</div>
+                        </div>
+
+                        <div class="line"></div>
+                        <div class="holder-total">
+                            <div>Всего</div>
+                            <div>{{totalCount}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="holder-rewiews">
+                    <div class="title-rewiews">
+                        <div class="rewiews"><h4>Последние отзывы</h4></div>
+                        <div class="rewiews-link"><a href="#">Все отзывы</a></div>
+                    </div>
+                    <div class="rewiews-box">
+                        <ul class="list" v-if="notes.length !== 0">
+                            <li class="list-item" v-for="(item, idx) in notes">
+                                <div class="title-rewiews">
+                                    <div class="rewiews"><h4>{{item.name}}</h4></div>
+                                    <div class=""><p>{{item.date}}</p></div>
+                                </div>
+                                <div class="comments">
+                                    <p>{{ item.text }}</p>
+                                </div>
+                                <span></span> 
+                            </li>
+                        </ul>
+                        <div v-else>Comments is absent</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container bgc-gray">
+            <div class="card">
+                <div class="text-input">
+                    <div class="form-control">
+                        <input
+                            type="text" 
+                            v-model="inputValue"
+                            @keypress.enter="addNewNote"
+                            />
+                    </div> 
+                    <div class="holder-btn">
+                        <button class="btn" @click="addNewNote"><b>Написать консультанту</b></button>
+                    </div>                
+                </div>                  
+            </div>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script> -->
+
+</body>
+</html>
