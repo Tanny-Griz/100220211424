@@ -9,6 +9,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 img {
     max-width: 100%;
@@ -36,10 +38,12 @@ ul {
     list-style: none;
     padding: 0;
 }
-
+#app {
+    background-color: #cee2ff;
+}
 .container {
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 510px;
 }
 
 .container.with-nav {
@@ -59,7 +63,7 @@ ul {
 }
 .btn {
     width: 281px;
-    background-color: #e2bd18;
+    background-color: #FDD639;
     border: none;
     padding: 13px;
     border-radius: 20px;
@@ -72,14 +76,18 @@ ul {
 .card {
     overflow: hidden;
     padding: 1rem;
-    background: #fff;
+    background-color: #fff;
 }
 .holder-user {
     display: flex;
     display: -ms-flexbox;
-    padding: 0 20px;
+    position: relative;
+    padding: 15px 0;
 }
 .holder-avatar {
+    position: absolute;
+    top: 0;
+    left: 0;
     overflow: hidden;
     width: 124px;
     height: 124px;
@@ -89,33 +97,93 @@ ul {
 }
 
 .holder-text {
-    padding: 20px;
+    width: 100%;
+    padding: 0 0 0 134px;
 }
-
+.holder-text-header h4 {
+    margin-bottom: 5px;
+}
 .holder-text p {
+    z-index: 1;
     font-size: 12px;
     color: gray;
     margin: 0 0 5px;
 }
 .text-box {
-    background-color: #d5da95;
+    max-width: 390px;
+    background-color: #FFFBC8;
     border: 1px solid #d3d3d3;
-    padding: 5px 60px;
-    margin: 0 -60px;
+    padding: 5px 10px 5px 45px;
+    margin: 0px -45px;
     border-radius: 5px;
+}
+.text-box span {
+    font-size: 14px;
 }
 .holder-services {
     display: flex;
     display: -ms-flexbox;
-    justify-content: flex-end;
-    padding: 0 20px;
+}
+.range {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0 0;
+    margin-bottom: 5px;
+}
+.range li {
+    padding: 0 0 0 3px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+.range li p {
+    padding: 3px 0;
+}
+.manualBooking::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 80%;
+    content: '';
+    background: #B1E19B;
+    border-radius: 0px 3px 3px 0px;
+}
+.packageTours::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    content: '';
+    background: #ACE2F8;
+    border-radius: 0px 3px 3px 0px;
+}
+.hotels::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 13%;
+    content: '';
+    background: #ACE2F8;
+    border-radius: 0px 3px 3px 0px;
 }
 .services {
-    width: 80%;
+    padding: 10px 34px 0 0;
+    width: 100%;
     text-align: right;
 }
+.services p {
+    font-size: 15px;
+    color: #333333;
+}
 .line {
-    border: 1px solid #d3d3d3;
+    border: 1px solid #dadada;
 }
 .holder-total {
     display: flex;
@@ -125,8 +193,12 @@ ul {
 }
 .title-rewiews {
     display: flex;
+    justify-content: space-between;
     display: -ms-flexbox;
     margin-bottom: 20px;
+}
+.title-rewiews h4 {
+    margin-right: 10px;
 }
 .rewiews {
     margin-right: 15px;
@@ -137,28 +209,19 @@ ul {
     justify-content: center;
 }
 .comments {
-    background: rgb(173, 208, 247);
+    background: #F2FBFF;
     position: relative;
     padding: 16px;
-    margin-left: 9px;
     width: 100%;
     text-align: left;
     box-shadow: 1px 1px 3px 0px rgb(126, 126, 126);
- }
- .comments:before {
-    content: '';
-    border: 10px solid transparent;
-    border-bottom: 12px solid rgb(173, 208, 247);
-    position: absolute;
-    left: 5px;
-    bottom: 50px;
-    margin-top: -9px;
 }
+
 .text-input {
     padding: 20px 0;
 }
 .bgc-gray .card {
-    background: #e9e9e9;
+    background: #F2F2F2;
 }
 .form-control {
     margin-bottom: 20px;
@@ -167,17 +230,30 @@ ul {
 .list-item {
     margin-bottom: 15px;
 }
-
+i {
+    color: #ACE2F8;
+    margin-right: 10px;
+}
 @media screen and (max-width: 768px) {
 
 }
 @media screen and (max-width: 480px) {
+    .holder-text {
+        padding: 0 0 0 70px;
+    }
     .holder-avatar {
         width: 60px;
         height: 60px;
     }
     .text-box {
+        max-width: 360px;
         font-size: 13px;
-        margin: 0 -148px;
+        margin: 0 -80px;
+    }
+    .title-rewiews {
+        flex-wrap: wrap;
+    }
+    .services {
+        padding: 10px 0 0 0;
     }
   }

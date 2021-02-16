@@ -56,7 +56,8 @@ const App = {
   },
   methods: {
     addNewNote() {
-      if(this.inputValue !== '') {
+      // if (this.inputValue !== '')
+      if(this.inputValue && this.inputValue !== '') {
         let inputDate = new Date()
         let dateY = inputDate.getFullYear()
         let dateM = months[inputDate.getMonth()];
