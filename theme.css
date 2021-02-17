@@ -246,9 +246,8 @@ i {
         height: 60px;
     }
     .text-box {
-        max-width: 360px;
+        width: 100%;
         font-size: 13px;
-        margin: 0 -80px;
     }
     .title-rewiews {
         flex-wrap: wrap;
@@ -256,4 +255,4 @@ i {
     .services {
         padding: 10px 0 0 0;
     }
-  }
+}
